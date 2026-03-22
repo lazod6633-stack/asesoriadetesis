@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scholarly Sanctuary | Research Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#4c6b60",
+              "surface-variant": "#eae8e0",
+              "surface-container-low": "#fcf9f3",
+              "on-tertiary-fixed": "#271300",
+              "primary-fixed-dim": "#badccf",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#dcfef0",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#e4e3da",
+              "tertiary-dim": "#765028",
+              "surface-bright": "#fffcf7",
+              "outline": "#81817a",
+              "tertiary-fixed-dim": "#ca9a6b",
+              "tertiary-container": "#d9a777",
+              "on-surface": "#383833",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#436257",
+              "primary": "#4c6b60",
+              "on-tertiary-fixed-variant": "#53320b",
+              "on-secondary-fixed": "#22463a",
+              "secondary-fixed-dim": "#b5ddcd",
+              "secondary-fixed": "#c3ebda",
+              "on-error": "#ffffff",
+              "error": "#ae4025",
+              "secondary-container": "#c3ebda",
+              "on-primary-container": "#3a584e",
+              "inverse-surface": "#0e0e0c",
+              "on-primary-fixed": "#27453c",
+              "on-tertiary-container": "#482904",
+              "on-secondary-container": "#35594c",
+              "on-primary": "#ffffff",
+              "background": "#fffcf7",
+              "error-container": "#fd795a",
+              "tertiary-fixed": "#d9a777",
+              "error-dim": "#791903",
+              "inverse-on-surface": "#9e9d98",
+              "surface-container-high": "#f0eee6",
+              "secondary-dim": "#3b5f52",
+              "primary-dim": "#405e54",
+              "on-background": "#383833",
+              "tertiary": "#845c32",
+              "surface-container": "#f6f3ec",
+              "outline-variant": "#bbb9b2",
+              "surface-container-highest": "#eae8e0",
+              "on-secondary-fixed-variant": "#3e6356",
+              "on-error-container": "#6e1400",
+              "secondary": "#476c5e",
+              "primary-container": "#c8eadd",
+              "primary-fixed": "#c8eadd",
+              "on-surface-variant": "#65655e",
+              "surface": "#fffcf7"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, .serif-font { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(252, 249, 243, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 px-4 bg-stone-50 dark:bg-stone-900 h-screen w-64 border-r-0 z-50">
+<div class="mb-12 px-4">
+<h2 class="font-serif text-2xl italic text-emerald-900 dark:text-emerald-500 mb-1">The Atheneum</h2>
+<p class="font-serif text-stone-800 dark:text-stone-200 opacity-60 text-xs">Research Hub</p>
+</div>
+<nav class="flex-1 space-y-4">
+<!-- Active State: Topic Selection -->
+<a class="flex items-center gap-3 text-emerald-800 dark:text-emerald-400 font-bold border-l-4 border-amber-700 pl-4 transition-all duration-150 active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-lg">lightbulb</span>
+<span class="text-sm tracking-wide">Topic Selection</span>
+</a>
+<a class="flex items-center gap-3 text-stone-500 dark:text-stone-400 pl-4 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg">search_insights</span>
+<span class="text-sm tracking-wide">Information Search</span>
+</a>
+<a class="flex items-center gap-3 text-stone-500 dark:text-stone-400 pl-4 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg">account_tree</span>
+<span class="text-sm tracking-wide">Conceptual Framework</span>
+</a>
+<a class="flex items-center gap-3 text-stone-500 dark:text-stone-400 pl-4 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors group" href="#">
+<span class="material-symbols-outlined text-lg">edit_note</span>
+<span class="text-sm tracking-wide">Review &amp; Drafting</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pt-8 border-t border-stone-200/50">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Project
+            </button>
+<div class="mt-6 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Researcher Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOlvxXsYpthJ3f7liC_BMpzzMNUohaupunqVrVov5PUAMdu6_269cEUaAPBryPhXyfOnTv4I3GyklJHChP-JbDmcWFLPVZqPTH_KeOjgi4O5U4VZ72Usn66eQnBlEGt0XmH0AXDaH0y6-IjHFNTkWlaPPELg7J-FAB7scuCEXcH4BoS8TUdDnrBM9vk2W13m9sH5ql8uuajQ8kE1gb6nFuPyOyYKpA4LXpuOKqJC9PrFZKXDmnbdEBIOvmxn6xDqgOvfyLoFu0g-c"/>
+</div>
+<div class="text-xs">
+<p class="font-bold">Student Researcher</p>
+<p class="opacity-60 text-[10px] uppercase tracking-widest">Premium Access</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar Component -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 flex justify-between items-center px-8 h-16 bg-white/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<h1 class="font-serif text-xl font-bold text-emerald-900 dark:text-emerald-500">Scholarly Sanctuary</h1>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm">search</span>
+<input class="bg-surface-container border-none rounded-full py-1.5 pl-10 pr-4 text-sm w-64 focus:ring-1 focus:ring-primary/30 transition-all outline-none" placeholder="Search the library..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-stone-400">
+<button class="hover:opacity-80 active:opacity-70"><span class="material-symbols-outlined">help_outline</span></button>
+<button class="hover:opacity-80 active:opacity-70"><span class="material-symbols-outlined">settings</span></button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-24 pb-16 px-12 max-w-7xl mx-auto min-h-screen">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl font-serif text-on-surface mb-6 leading-tight">Hub de Investigación Asistida por IA</h2>
+<p class="text-lg text-on-surface-variant font-light leading-relaxed">
+                        Bienvenido a tu espacio de pensamiento profundo. Aquí, la inteligencia artificial actúa como tu bibliotecario personal y mentor metodológico, guiándote a través del rigor académico con la serenidad de una biblioteca digital.
+                    </p>
+</div>
+<div class="hidden md:block">
+<div class="bg-secondary-container/30 p-6 rounded-xl border-l-4 border-tertiary">
+<p class="text-xs font-bold text-tertiary uppercase tracking-widest mb-1">Tu Progreso</p>
+<div class="flex gap-2 mb-2">
+<div class="h-2 w-8 bg-primary rounded-full"></div>
+<div class="h-2 w-8 bg-surface-variant rounded-full"></div>
+<div class="h-2 w-8 bg-surface-variant rounded-full"></div>
+<div class="h-2 w-8 bg-surface-variant rounded-full"></div>
+</div>
+<p class="text-sm font-medium">Elección del Tema (25%)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Phase Navigation / Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+<!-- Phase 1: Large Featured Card -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container-lowest rounded-xl border-l-4 border-tertiary transition-all hover:translate-y-[-4px]">
+<div class="p-8">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold tracking-widest uppercase">Fase 1</span>
+<button class="p-2 bg-surface-container-highest rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<h3 class="text-3xl font-serif mb-4">Elección del Tema</h3>
+<p class="text-on-surface-variant mb-8 max-w-lg">Identifica vacíos de investigación y define un problema sólido que sea relevante, viable y original.</p>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 bg-primary text-on-primary px-5 py-2.5 rounded-lg text-sm font-medium hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">download</span>
+                            Guía de Metodología
+                        </button>
+<button class="flex items-center gap-2 border border-outline-variant/30 px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">chat</span>
+                            Prompt ChatGPT
+                        </button>
+<button class="flex items-center gap-2 border border-outline-variant/30 px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">language</span>
+                            Prompt Perplexity
+                        </button>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 w-32 h-32 opacity-10 pointer-events-none translate-x-8 translate-y-8">
+<span class="material-symbols-outlined text-[120px]">lightbulb</span>
+</div>
+</div>
+<!-- Phase 2: Square Card -->
+<div class="md:col-span-4 bg-surface-container-low rounded-xl p-8 border-l-4 border-outline-variant/20 hover:border-primary/40 transition-all flex flex-col">
+<span class="text-[10px] font-bold text-on-surface-variant/60 tracking-widest uppercase mb-4">Fase 2</span>
+<h3 class="text-xl font-serif mb-3">Búsqueda de Información</h3>
+<p class="text-sm text-on-surface-variant mb-8 leading-relaxed">Localiza fuentes académicas primarias y organiza tu bibliografía crítica.</p>
+<div class="mt-auto space-y-3">
+<button class="w-full text-left flex items-center justify-between group/btn text-sm font-bold border-b border-outline-variant/20 pb-2">
+<span>Descargar Guía</span>
+<span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full text-left flex items-center justify-between group/btn text-sm font-bold border-b border-outline-variant/20 pb-2 opacity-50">
+<span>Copiar Prompt (IA)</span>
+<span class="material-symbols-outlined text-sm">lock</span>
+</button>
+</div>
+</div>
+<!-- Phase 3: Special Action Card -->
+<div class="md:col-span-6 bg-gradient-to-br from-primary-container to-surface-container rounded-xl p-8 border-l-4 border-primary transition-all hover:shadow-xl hover:shadow-primary/5">
+<div class="flex justify-between items-start mb-6">
+<span class="px-3 py-1 bg-surface-container-lowest text-primary rounded-full text-[10px] font-bold tracking-widest uppercase">Fase 3</span>
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<h3 class="text-2xl font-serif mb-3">Fase 3: Planteamiento y Marco Conceptual</h3>
+<p class="text-on-primary-container mb-8 leading-relaxed">Utiliza modelos de lenguaje avanzados para estructurar los argumentos y dimensiones de tu investigación.</p>
+<div class="flex flex-wrap gap-3">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg text-sm font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:translate-y-[-2px] transition-all">
+                        Ir a Claude Console
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+<button class="bg-surface-container-lowest text-primary px-6 py-3 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-white transition-all">
+                        Guía de Marco Teórico
+                    </button>
+</div>
+</div>
+<!-- Phase 4: Compact Card -->
+<div class="md:col-span-6 bg-surface-container-highest rounded-xl p-8 border-l-4 border-outline-variant/20 flex items-center gap-8 group">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-3xl text-tertiary">edit_note</span>
+</div>
+<div class="flex-1">
+<h3 class="text-xl font-serif mb-1">Revisión y Redacción Final</h3>
+<p class="text-xs text-on-surface-variant opacity-70 mb-4">Pulido académico, citación APA y coherencia narrativa.</p>
+<div class="flex gap-4">
+<button class="text-[10px] font-bold uppercase tracking-widest text-primary hover:underline">Download Pack</button>
+<button class="text-[10px] font-bold uppercase tracking-widest text-primary hover:underline">Copy Prompt</button>
+</div>
+</div>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Editorial Section: Tips for Success -->
+<section class="mt-20 border-t border-stone-200/50 pt-16">
+<h2 class="text-3xl font-serif mb-10 text-center italic">El Arte de Investigar</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="text-center">
+<div class="w-12 h-12 bg-tertiary-container/20 text-tertiary rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h4 class="font-bold mb-3 uppercase tracking-wider text-xs">Lectura Activa</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">No solo consumas información; dialoga con el autor y cuestiona los supuestos básicos de cada texto.</p>
+</div>
+<div class="text-center">
+<div class="w-12 h-12 bg-primary-container/20 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h4 class="font-bold mb-3 uppercase tracking-wider text-xs">Uso Ético de IA</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">La IA es un catalizador, no un reemplazo. Tu voz y criterio académico deben permanecer en el centro.</p>
+</div>
+<div class="text-center">
+<div class="w-12 h-12 bg-secondary-container/20 text-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<h4 class="font-bold mb-3 uppercase tracking-wider text-xs">Rigor Metodológico</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">Cada afirmación requiere una base. Asegura que tu estructura lógica sea impecable de principio a fin.</p>
+</div>
+</div>
+</section>
+<!-- Footer Visual -->
+<footer class="mt-32 pt-8 border-t border-stone-100 text-center">
+<p class="font-serif italic text-stone-400 text-sm">"Knowledge is a garden. If it is not cultivated, it cannot be harvested."</p>
+<div class="flex justify-center gap-6 mt-6 opacity-30 grayscale">
+<img alt="University Logo" class="h-8" data-alt="University academic logo in gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADlxVHKk9EKW5E-uOQwbQsKM6rZ9_PpxbHyo8kZK2scCQ7GRQ_yHp_blCiaKuDZR1Z8NBxQ_-Uf3-Cpisunkclywc4WNSYaMJhNt7rwP7o_rzgTQQXL8yQzy72cConglCmIS3FCveMW8MfHnzV-klHCi5DOXpLnPLdn2cpH1v_vDyIK06RxPvjQlh-_aJstrJepJWBkp_3rOq-PXyonTwLBoyZMn1kwnDk9xFaHD_PfKnAUeYVbwRrjrlArArGyjHm7g5DiQKHD48"/>
+<img alt="Research Labs Logo" class="h-8" data-alt="Research laboratories minimalist logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHPKuZdy9gZbHNOD4qnBtnncUpKPnWccTR7QXq5khauVH8OlG_059mEGKDrXqKi6BvjVrOv2wnZDlUKJZhgh0nd626SalfTDITlyhJwRre8meIdhuOFPNeFb_sZPdhRXbeo9iiF6TI8M0Pmq2XQnSuO5ZX0BmxEPcx4Vsalae0K4kjwoy6z680dYC72NwSOPoZmUNR-4s60QpYWZp666wo5S_w5PQDlP0q5QR8reX-OaOs2JehhkgWsKt6tKZEpII-4GllLvWcZR4"/>
+</div>
+</footer>
+</main>
+</body></html>
