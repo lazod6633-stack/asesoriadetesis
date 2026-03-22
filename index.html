@@ -105,7 +105,7 @@
             border-radius: 8px;
             padding: 16px;
             position: fixed;
-            z-index: 100;
+            z-index: 1000;
             left: 50%;
             bottom: 30px;
         }
@@ -199,7 +199,8 @@
 <div class="bg-white rounded-xl border-l-4 border-tertiary p-8 shadow-sm">
 <div class="flex justify-between mb-4">
 <h3 class="text-xl font-serif">Catalizador de Ideas (AI Prompt)</h3>
-<button class="p-2 hover:bg-stone-100 rounded-full transition-colors" onclick="copyText(this, 'actua-tutor-prompt')">
+<button class="p-2 hover:bg-stone-100 rounded-full transition-colors flex items-center gap-2 group" onclick="copyText(this, 'actua-tutor-prompt')">
+<span class="text-[10px] font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Copiar</span>
 <span class="material-symbols-outlined text-stone-500">content_copy</span>
 </button>
 </div>
@@ -207,10 +208,10 @@
                         "Actúa como un tutor de metodología de investigación. Mis áreas de interés son [Inserta tus temas, ej: psicología educativa, gamificación]. Ayúdame a realizar un brainstorming de 5 temas de tesis que sean actuales, relevantes y que tengan un alcance manejable para una investigación de pregrado. Para cada tema, incluye una breve justificación de su relevancia social o científica."
                     </div>
 <div class="flex flex-wrap gap-4">
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 hover:opacity-90" onclick="simulateDownload('Guía de Etapa 1')">
+<a class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 hover:opacity-90 transition-all" download="Guia_Etapa_1.pdf" href="#download-guia-1" onclick="simulateDownload('Guía de Etapa 1')">
 <span class="material-symbols-outlined text-sm">download</span> Descargar Guía
-                        </button>
-<button class="border border-outline-variant px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 hover:bg-stone-50" onclick="copyText(this, 'actua-tutor-prompt')">
+                        </a>
+<button class="border border-outline-variant px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 hover:bg-stone-50 transition-all" onclick="copyText(this, 'actua-tutor-prompt')">
 <span class="material-symbols-outlined text-sm">chat</span> Copiar para ChatGPT
                         </button>
 </div>
@@ -268,18 +269,19 @@
 <div class="bg-white rounded-xl border-l-4 border-tertiary p-8 shadow-sm">
 <div class="flex justify-between mb-4">
 <span class="text-[10px] font-bold text-tertiary tracking-widest uppercase">Strategic Prompt</span>
-<button class="p-2 hover:bg-stone-100 rounded-full transition-colors" onclick="copyText(this, 'perplexity-prompt')">
+<button class="p-2 hover:bg-stone-100 rounded-full transition-colors flex items-center gap-2 group" onclick="copyText(this, 'perplexity-prompt')">
+<span class="text-[10px] font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Copiar</span>
 <span class="material-symbols-outlined text-stone-500">content_copy</span>
 </button>
 </div>
 <h3 class="text-2xl font-serif mb-4">Configuración de Perplexity</h3>
 <div class="bg-surface-container-low p-6 rounded-lg font-body text-on-surface leading-relaxed italic mb-8 border-b-2 border-primary/10" id="perplexity-prompt">
-                        "Actúa como un bibliotecario académico experto... Realiza una búsqueda exhaustiva de fuentes académicas (papers, tesis, libros) publicadas entre 2019-2024 sobre [Tema]. Prioriza JSTOR, PubMed y ResearchGate. Genera una lista organizada por relevancia metodológica."
+                        "Actúa como un bibliotecario académico experto. Mi objetivo es realizar una revisión del estado del arte para un estudio sobre [Insertar Tema]. Realiza una búsqueda exhaustiva de fuentes académicas publicadas entre 2019-2024. Prioriza bases de datos como JSTOR, PubMed y ResearchGate. Genera una lista organizada por relevancia metodológica y año."
                     </div>
 <div class="flex gap-4">
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 hover:opacity-90" onclick="simulateDownload('Guía de Búsqueda')">
-<span class="material-symbols-outlined text-sm">download</span> Descargar Guía
-                        </button>
+<a class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-bold text-sm flex items-center gap-2 hover:opacity-90 transition-all" download="Guia_Busqueda_Bibliografica.pdf" href="#download-guia-search" onclick="simulateDownload('Guía de Búsqueda')">
+<span class="material-symbols-outlined text-sm">download</span> Descargar Guía de Búsqueda
+                        </a>
 </div>
 </div>
 </div>
@@ -335,7 +337,7 @@
 <div class="bg-gradient-to-br from-emerald-800 to-emerald-950 p-8 rounded-xl text-white shadow-lg">
 <h4 class="font-serif text-2xl mb-4">Claude 3.5 Sonnet</h4>
 <p class="text-sm opacity-80 mb-6">Optimizado para razonamiento complejo y ética académica.</p>
-<a class="block text-center py-3 bg-white/10 hover:bg-white/20 rounded-lg font-bold text-sm transition-all" href="https://claude.ai" target="_blank">Ir a Consola de Claude</a>
+<a class="block text-center py-3 bg-white/10 hover:bg-white/20 rounded-lg font-bold text-sm transition-all" href="https://claude.ai/chat/new" rel="noopener noreferrer" target="_blank">Ir a Consola de Claude</a>
 </div>
 </div>
 <div class="col-span-12 lg:col-span-8 space-y-6">
@@ -348,19 +350,25 @@
 <img alt="Artifact preview" class="max-h-full rounded shadow-md grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWHYkt1KbFL3ony_KCdDygVk_5rKTexSF-DaE7YMRK9ruaplk8-uV-AWwnZchioLuOxwUbUzKGwHfgDhvaSUb8jT6UecD69iQjbfNY7eNovdzGDw5bcTs6cWHG9sPbPLeAEEehI9SxE-Me2uwTWzN7Ee6Ztn66Yx1SFLXqLiovx0rwR9pKYOt-I-6mAgrEd9nJ8YOajXCizzRrujP4zfBwZlIVfbU8_t6WghN48z3WqGd3LdFIYzvcRlI1L-htvQBukZv0tRrOrvQ"/>
 </div>
 <div class="p-4 bg-stone-50 flex justify-end">
-<button class="text-primary text-sm font-bold hover:underline" onclick="simulateDownload('Documento Marco Conceptual')">Exportar PDF</button>
+<a class="text-primary text-sm font-bold hover:underline transition-all" download="Marco_Conceptual_Draft.pdf" href="#download-conceptual" onclick="simulateDownload('Documento Marco Conceptual')">Exportar PDF</a>
 </div>
 </div>
 <div class="grid grid-cols-2 gap-6">
-<div class="bg-white p-6 rounded-xl border-l-4 border-tertiary shadow-sm relative">
-<button class="absolute top-4 right-4 text-stone-400 hover:text-tertiary" onclick="copyText(this, 'hier-prompt')"><span class="material-symbols-outlined text-sm">content_copy</span></button>
+<div class="bg-white p-6 rounded-xl border-l-4 border-tertiary shadow-sm relative group">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-tertiary flex items-center gap-1" onclick="copyText(this, 'hier-prompt')">
+<span class="text-[9px] font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Copiar</span>
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
 <span class="text-[10px] text-tertiary uppercase font-bold tracking-widest block mb-2">Estructura</span>
-<p class="text-xs text-stone-600 line-clamp-3" id="hier-prompt">"Genera una jerarquía de dimensiones para el marco teórico basado en [Tema]..."</p>
+<p class="text-xs text-stone-600 line-clamp-3" id="hier-prompt">"Genera una jerarquía de dimensiones para el marco teórico basado en [Tema], asegurando coherencia entre los objetivos específicos y las variables de estudio..."</p>
 </div>
-<div class="bg-white p-6 rounded-xl border-l-4 border-primary shadow-sm relative">
-<button class="absolute top-4 right-4 text-stone-400 hover:text-primary" onclick="copyText(this, 'gap-prompt')"><span class="material-symbols-outlined text-sm">content_copy</span></button>
+<div class="bg-white p-6 rounded-xl border-l-4 border-primary shadow-sm relative group">
+<button class="absolute top-4 right-4 text-stone-400 hover:text-primary flex items-center gap-1" onclick="copyText(this, 'gap-prompt')">
+<span class="text-[9px] font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Copiar</span>
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
 <span class="text-[10px] text-primary uppercase font-bold tracking-widest block mb-2">Búsqueda</span>
-<p class="text-xs text-stone-600 line-clamp-3" id="gap-prompt">"Detecta posibles inconsistencias lógicas en mi planteamiento del problema..."</p>
+<p class="text-xs text-stone-600 line-clamp-3" id="gap-prompt">"Detecta posibles inconsistencias lógicas en mi planteamiento del problema y sugiere tres brechas de investigación (research gaps) justificables..."</p>
 </div>
 </div>
 </div>
@@ -374,25 +382,28 @@
 </section>
 <div class="grid grid-cols-12 gap-8">
 <div class="col-span-12 lg:col-span-7 space-y-8">
-<div class="bg-white p-8 rounded-xl border-l-4 border-tertiary shadow-sm relative">
-<button class="absolute top-6 right-6 text-stone-400 hover:text-tertiary" onclick="copyText(this, 'style-prompt')"><span class="material-symbols-outlined">content_copy</span></button>
+<div class="bg-white p-8 rounded-xl border-l-4 border-tertiary shadow-sm relative group">
+<button class="absolute top-6 right-6 text-stone-400 hover:text-tertiary flex items-center gap-1" onclick="copyText(this, 'style-prompt')">
+<span class="text-[10px] font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Copiar</span>
+<span class="material-symbols-outlined">content_copy</span>
+</button>
 <h3 class="font-bold text-xl mb-4">Catalizador de Estilo</h3>
 <div class="bg-stone-50 p-6 rounded-lg text-sm italic text-stone-600 space-y-2" id="style-prompt">
 <p>"Actúa como un editor académico experto. Revisa el siguiente fragmento centrándote en:"</p>
 <ol class="list-decimal list-inside ml-2">
 <li>Coherencia Argumentativa</li>
-<li>Voz y Tono</li>
-<li>Rigor de Citación</li>
+<li>Voz y Tono Académico</li>
+<li>Rigor de Citación (Normas APA/Vancouver)</li>
 </ol>
 </div>
 </div>
 <div class="bg-emerald-900 p-10 rounded-xl text-white relative overflow-hidden shadow-lg">
 <div class="relative z-10">
 <h4 class="text-3xl font-serif mb-4">El Toque Humano</h4>
-<p class="text-sm opacity-80 mb-8 max-w-lg">La IA es un espejo, no una pluma. Mantén siempre la autoridad de tu voz intelectual.</p>
-<button class="bg-white text-emerald-900 px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:bg-stone-100" onclick="simulateDownload('Guía de Estilo')">
+<p class="text-sm opacity-80 mb-8 max-w-lg">La IA es un espejo, no una pluma. Mantén siempre la autoridad de tu voz intelectual y tu pensamiento crítico.</p>
+<a class="inline-flex bg-white text-emerald-900 px-8 py-3 rounded-lg font-bold items-center gap-2 hover:bg-stone-100 transition-all" download="Guia_Estilo_Academico.pdf" href="#download-estilo" onclick="simulateDownload('Guía de Estilo')">
                             Descargar Guía de Estilo <span class="material-symbols-outlined">download</span>
-</button>
+</a>
 </div>
 <span class="absolute -bottom-10 -right-10 text-[200px] text-white/10 material-symbols-outlined">ink_pen</span>
 </div>
@@ -407,13 +418,13 @@
 </label>
 <label class="flex gap-3 cursor-pointer group">
 <input class="rounded text-primary focus:ring-primary mt-1" type="checkbox"/>
-<div class="text-sm"><p class="font-bold group-hover:text-primary">Términos</p><p class="text-stone-500">Uso uniforme de conceptos.</p></div>
+<div class="text-sm"><p class="font-bold group-hover:text-primary">Términos</p><p class="text-stone-500">Uso uniforme de conceptos clave.</p></div>
 </label>
 </div>
 <button class="w-full mt-8 bg-tertiary text-on-tertiary py-4 rounded-xl font-bold uppercase tracking-wider shadow-lg hover:scale-[1.01] transition-all">Concluir Investigación</button>
 </div>
-<div class="bg-white p-6 rounded-xl border border-stone-100 flex items-center gap-4">
-<div class="w-16 h-16 bg-stone-100 rounded-lg flex items-center justify-center text-primary">
+<div class="bg-white p-6 rounded-xl border border-stone-100 flex items-center gap-4 group hover:border-primary transition-colors cursor-pointer">
+<div class="w-16 h-16 bg-stone-100 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary-container transition-colors">
 <span class="material-symbols-outlined text-3xl">description</span>
 </div>
 <div>
@@ -440,20 +451,22 @@
 </div>
 </footer>
 <!-- Toast notification -->
-<div id="toast">Copied to clipboard!</div>
+<div id="toast">Copiado al portapapeles!</div>
 <script>
     const views = ['discovery', 'analysis', 'synthesis', 'publication'];
     
     function switchView(viewName) {
         // Hide all views
         views.forEach(v => {
-            document.getElementById(`view-${v}`).classList.remove('active');
+            const el = document.getElementById(`view-${v}`);
+            if (el) el.classList.remove('active');
             const navBtn = document.querySelector(`.nav-btn[data-view="${v}"]`);
             if (navBtn) navBtn.classList.remove('nav-item-active');
         });
 
         // Show active view
-        document.getElementById(`view-${viewName}`).classList.add('active');
+        const activeViewEl = document.getElementById(`view-${viewName}`);
+        if (activeViewEl) activeViewEl.classList.add('active');
         const activeNavBtn = document.querySelector(`.nav-btn[data-view="${viewName}"]`);
         if (activeNavBtn) activeNavBtn.classList.add('nav-item-active');
 
@@ -468,43 +481,56 @@
         const index = views.indexOf(viewName);
         for (let i = 1; i <= 4; i++) {
             const pb = document.getElementById(`pb-${i}`);
-            if (i <= index + 1) {
-                pb.classList.remove('bg-surface-variant');
-                pb.classList.add('bg-primary');
-            } else {
-                pb.classList.remove('bg-primary');
-                pb.classList.add('bg-surface-variant');
+            if (pb) {
+                if (i <= index + 1) {
+                    pb.classList.remove('bg-surface-variant');
+                    pb.classList.add('bg-primary');
+                } else {
+                    pb.classList.remove('bg-primary');
+                    pb.classList.add('bg-surface-variant');
+                }
             }
         }
     }
 
     function copyText(btn, elementId) {
-        const text = document.getElementById(elementId).innerText;
+        const el = document.getElementById(elementId);
+        if (!el) return;
+        
+        const text = el.innerText;
         navigator.clipboard.writeText(text).then(() => {
-            showToast('Prompt copied to clipboard!');
+            showToast('¡Prompt copiado al portapapeles!');
             
-            // Temporary visual feedback on button
-            const originalIcon = btn.innerHTML;
-            btn.innerHTML = '<span class="material-symbols-outlined text-emerald-600">check</span>';
-            setTimeout(() => {
-                btn.innerHTML = originalIcon;
-            }, 2000);
+            // Visual feedback on button
+            const originalHTML = btn.innerHTML;
+            const isSmall = btn.querySelector('.text-sm') || btn.classList.contains('text-xs');
+            
+            if (btn.querySelector('.material-symbols-outlined')) {
+                btn.classList.add('bg-emerald-50', 'text-emerald-700');
+                const icon = btn.querySelector('.material-symbols-outlined');
+                const oldIconText = icon.innerText;
+                icon.innerText = 'check';
+                
+                setTimeout(() => {
+                    btn.classList.remove('bg-emerald-50', 'text-emerald-700');
+                    icon.innerText = oldIconText;
+                }, 2000);
+            }
         });
     }
 
     function showToast(message) {
         const toast = document.getElementById('toast');
+        if (!toast) return;
         toast.innerText = message;
         toast.className = 'show';
         setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 3000);
     }
 
     function simulateDownload(filename) {
-        showToast(`Download started: ${filename}...`);
-        // Simulate a delay
-        setTimeout(() => {
-            console.log(`Mock: File ${filename} downloaded successfully.`);
-        }, 1500);
+        showToast(`Iniciando descarga: ${filename}...`);
+        // The HTML download attribute handles the actual browser behavior if the href is valid
+        console.log(`Mock: Iniciando descarga de archivo para ${filename}.`);
     }
 
     // Initialize the default view
